@@ -2826,32 +2826,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 632488437}
-  - component: {fileID: 632488436}
+  - component: {fileID: 632488438}
   m_Layer: 0
   m_Name: InputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &632488436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632488435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea90184e3b8e484d95aa77729e5931b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputActionAsset: {fileID: -944628639613478452, guid: 22b874e6ecf4c9040ac1607fb2887272,
-    type: 3}
-  _mapName: DefaultMap
-  _moveName: Movement
-  _lookAroundName: LookAround
-  _cameraLockName: CameraLock
+  m_IsActive: 0
 --- !u!4 &632488437
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,6 +2849,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632488438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632488435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fd6eb26bc25a84a8d86fda59b76035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputActionAsset: {fileID: -944628639613478452, guid: 22b874e6ecf4c9040ac1607fb2887272,
+    type: 3}
+  _mapName: 
+  _UImapName: 
+  _moveName: 
+  _lookAroundName: 
+  _pointerPositionName: 
+  _primaryFireName: 
+  _secondaryFireName: 
+  _grenadeName: 
+  _scoreName: 
+  _reloadName: 
+  _escapeName: 
+  _jumpName: 
+  _enabledCursorMode: 0
+  _disabledCursorMode: 0
 --- !u!1 &633226324
 GameObject:
   m_ObjectHideFlags: 0
