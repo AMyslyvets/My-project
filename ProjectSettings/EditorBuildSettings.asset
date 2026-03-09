@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Assets/HomeWork_Lesson12/HW15/Scenes/FizLobby.unity
+    guid: 0eb0733b3e6682d4cbab094b6914ebdf
+  - enabled: 1
+    path: Assets/Assets/HomeWork_Lesson12/HW15/Scenes/Fiz.unity
+    guid: 556bce3c7387c3b4f809c22dfdf4dd3f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 22b874e6ecf4c9040ac1607fb2887272,
       type: 3}
