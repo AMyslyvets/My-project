@@ -65,7 +65,7 @@ Material:
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
     - _Emission: 2
-    - _Fullness: 1.63
+    - _Fullness: 1.1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
