@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5995865, y: 2, z: -3.1848946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,16 +50,16 @@ MonoBehaviour:
   panelPrefab: {fileID: 4508016110743330936, guid: 5469d93bf5e0d44449973a7dda27251e,
     type: 3}
   panelCount: 8
-  orbitRadius: 1.2
+  orbitRadius: 1.3
   orbitSpeed: 30
-  layerCount: 2
+  layerCount: 3
   layerOffset: 0.3
-  chaoticPanelCount: 24
-  chaoticRadiusMin: 1.2
-  chaoticRadiusMax: 1.4
+  chaoticPanelCount: 68
+  chaoticRadiusMin: 2.7
+  chaoticRadiusMax: 2.7
   chaoticHeightMax: 1
   hexSize: 0.48
   seedValue: 40
   color1: {r: 0, g: 0.7, b: 1, a: 1}
-  color2: {r: 0, g: 1, b: 0.4, a: 1}
+  color2: {r: 0, g: 0.69803923, b: 1, a: 1}
   colorSpeed: 1

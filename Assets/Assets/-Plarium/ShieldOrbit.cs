@@ -131,7 +131,7 @@ public class ShieldOrbit : MonoBehaviour
 
         float sharedRadius = (chaoticRadiusMin + chaoticRadiusMax) / 2f;
         int index = 0;
-        int clusterCount = 6;
+        int clusterCount = Mathf.Max(1, chaoticPanelCount / 7);
 
         int[] clusterSizes = new int[clusterCount];
         int remaining = chaoticPanelCount;

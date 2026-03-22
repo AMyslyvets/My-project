@@ -10806,21 +10806,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 757756607924079780, guid: 536234158f2a48a4681af0708f319bb1,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 757756607924079780, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 757756607924079780, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 757756607924079780, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -10876,28 +10861,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8827822004458551217, guid: 536234158f2a48a4681af0708f319bb1,
         type: 3}
-      propertyPath: color2.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827822004458551217, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: color2.g
-      value: 0.69803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827822004458551217, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: orbitRadius
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827822004458551217, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: chaoticRadiusMax
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827822004458551217, guid: 536234158f2a48a4681af0708f319bb1,
-        type: 3}
-      propertyPath: chaoticRadiusMin
-      value: 2.7
+      propertyPath: chaoticPanelCount
+      value: 68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
