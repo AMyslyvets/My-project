@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniformShield: 0
   chaoticShield: 0
-  fixedShield: 0
+  fixedShield: 1
   panelPrefab: {fileID: 4508016110743330936, guid: 5469d93bf5e0d44449973a7dda27251e,
     type: 3}
   panelCount: 8
@@ -55,8 +55,8 @@ MonoBehaviour:
   layerCount: 2
   layerOffset: 0.3
   chaoticPanelCount: 24
-  chaoticRadiusMin: 1.5
-  chaoticRadiusMax: 1.8
+  chaoticRadiusMin: 1.2
+  chaoticRadiusMax: 1.4
   chaoticHeightMax: 1
   hexSize: 0.48
   seedValue: 40
