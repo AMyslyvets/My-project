@@ -7,31 +7,34 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SoulFireAdd
-  m_Shader: {fileID: -6465566751694194690, guid: eda45765392a6e04cb8b734d9c714d32,
+  m_Name: EnergyShield 3
+  m_Shader: {fileID: -6465566751694194690, guid: e49662cb23d94f44093f634d522a6042,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHATEST_ON
-  - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  - USE_BIG_SCANLINE
+  - USE_COLLISION_RIPPLES
+  - USE_EDGE_GLOW
+  - USE_HEXAGON_GLOW
+  - USE_INTERSECTION
+  - USE_SCANLINES
+  m_InvalidKeywords:
+  - USE_HEXAGON_CLOUD
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - DepthOnly
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ebdf3df4fdf220c4ab1299c5cd760216, type: 3}
-        m_Scale: {x: 1, y: 0.062}
-        m_Offset: {x: 0, y: -39.4375}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -49,13 +52,21 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: ebdf3df4fdf220c4ab1299c5cd760216, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: -12.5625}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTexture:
+        m_Texture: {fileID: 2800000, guid: 531071fafbd39884da42c03d2ca75b32, type: 3}
+        m_Scale: {x: 1, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _HexagonTexture:
+        m_Texture: {fileID: 2800000, guid: 3d5c3b6e09eebb04798ef3144ee13a57, type: 3}
+        m_Scale: {x: 3, y: 1.5}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 0.062}
-        m_Offset: {x: 0, y: -3.875}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -67,6 +78,10 @@ Material:
     - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScanlineTexture:
+        m_Texture: {fileID: 2800000, guid: 531071fafbd39884da42c03d2ca75b32, type: 3}
+        m_Scale: {x: 1, y: 18}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
@@ -86,66 +101,72 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 1
-    - _AlphaToMask: 0
-    - _Blend: 2
-    - _BlendModePreserveSpecular: 1
-    - _BlendOp: 0
+    - USE_BIG_SCANLINE: 1
+    - USE_COLLISION_RIPPLES: 1
+    - USE_EDGE_GLOW: 1
+    - USE_HEXAGON_CLOUD: 1
+    - USE_HEXAGON_GLOW: 1
+    - USE_INTERSECTION: 1
+    - USE_SCANLINES: 1
+    - _AlphaClip: 0
+    - _AspectRatio: 0.5
+    - _BigScanlineSpeed: 0.15
+    - _BigScanlineStrength: 0.4
+    - _BigScanlineThickness: 0.025
+    - _Blend: 0
     - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorMode: 0
-    - _Cull: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 1
-    - _DstBlendAlpha: 1
+    - _DstBlend: 0
+    - _EdgeGlowStrength: 1
     - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GlowNoiseScale: 1
+    - _GlowSpeed: 4
+    - _Heightmap_Strength: 0.01
+    - _HexagonCloudRotation: 0.03
+    - _HexagonCloudScale: 3
+    - _HexagonCloudSpeed: 0.05
+    - _Hexagon_Strength: 50
+    - _IntersectionStrength: 1
+    - _IntersectionThickness: 0.05
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SampleGI: 0
+    - _RippleSpeed: 2.5
+    - _RippleThickness: 0.05
+    - _RippleTime: 2.68
+    - _RippleTimeFalloff: 0.25
+    - _ScanlineStrength: 0.02
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
-    - _SrcBlendAlpha: 1
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
     - _WorkflowMode: 1
-    - _ZTest: 4
-    - _ZWrite: 0
-    - _ZWriteControl: 0
+    - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.6415096, g: 0.6415096, b: 0.6415096, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 0, b: 0.88748884, a: 0.5019608}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeGlowThickness: {r: 0.02, g: 0.04, b: 0, a: 0}
+    - _EmissionColor: {r: 23.968628, g: 0, b: 15.138755, a: 1}
+    - _GlowStrengthMinMax: {r: 0, g: 0.25, b: 0, a: 0}
+    - _HexagonStrengthMinMax: {r: 0, g: 1, b: 0, a: 0}
+    - _Hexagon_Cloud_Direction: {r: -1, g: -0.5, b: 0, a: 0}
+    - _RippleOrigin: {r: 0.38, g: 0.41, b: 0, a: 0}
+    - _ScrollVelocity: {r: 0, g: 0.01, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5906548724544166186
+--- !u!114 &6354696719184793513
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
