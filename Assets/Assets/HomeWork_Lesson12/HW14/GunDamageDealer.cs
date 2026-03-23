@@ -44,6 +44,8 @@ namespace Fiz
         [SerializeField] private HealthSystem _healthSystem;
         [SerializeField] private HitScanGun _gun;
         [SerializeField] private int _damage;
+        [SerializeField] private ShieldOrbit _shieldOrbit;
+        [SerializeField] private Health _health;
 
         public HitScanGun Gun => _gun;
 
@@ -54,16 +56,26 @@ namespace Fiz
 
         private void GunHitHandler(Collider collider)
         {
-            // Получаем Health
+            Debug.Log($"Hit: {collider.gameObject.name}");
+    
             if (_healthSystem.GetHealth(collider, out Health health))
             {
+                Debug.Log($"Health found: {health.gameObject.name}");
                 health.TakeDamage(_damage);
             }
-
-            // Воспроизводим hit effect (если цель его поддерживает)
-            if (collider.TryGetComponent<IHitEffectReceiver>(out var receiver))
+            else
             {
-                receiver.PlayHitEffect(_gun.transform.position); // можно передать точку выстрела или попадания
+                Debug.Log("Health NOT found");
+            }
+
+            if (collider.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            {
+                Debug.Log("IHitEffectReceiver found");
+                receiver.PlayHitEffect(_gun.transform.position);
+            }
+            else
+            {
+                Debug.Log("IHitEffectReceiver NOT found");
             }
 
             OnHit?.Invoke(health ? 1 : 0);

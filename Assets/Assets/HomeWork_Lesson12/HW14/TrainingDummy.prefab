@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 839127204972779582}
   - component: {fileID: 8206936744270238536}
   - component: {fileID: 3773570090015830929}
+  - component: {fileID: 1114851909245405562}
   - component: {fileID: 5395731271876974480}
   m_Layer: 0
   m_Name: TrainingDummy
@@ -362,6 +363,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 5395731271876974480}
   _regenerationDelayTime: 1
+--- !u!114 &1114851909245405562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071399590891712887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40b1ed8026cad2478e072c440fbcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
+    type: 3}
+  _effectHeightOffset: 2
 --- !u!114 &5395731271876974480
 MonoBehaviour:
   m_ObjectHideFlags: 0
