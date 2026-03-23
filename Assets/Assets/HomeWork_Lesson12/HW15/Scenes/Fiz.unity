@@ -9397,6 +9397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345761924}
   - component: {fileID: 345761925}
+  - component: {fileID: 345761926}
   m_Layer: 0
   m_Name: HexSphere
   m_TagString: Untagged
@@ -9444,6 +9445,23 @@ MonoBehaviour:
   horizontalSpacingMult: 1.2
   rotationOffset: {x: 90, y: 0, z: 0}
   randomSpin: 1
+--- !u!114 &345761926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345761923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f24222470a9ec4b98c187904134bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldTransform: {fileID: 345761924}
+  breakDuration: 0.15
+  appearDuration: 0
+  normalScale: 0.4
+  breakScale: 1.4
 --- !u!4 &356636035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7514336129911514703, guid: 30ac70a3d687c114a940e775851aeb6e,
@@ -55576,6 +55594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shieldOrbit: {fileID: 8827822004946653042}
   _health: {fileID: 1477703945707177641}
+  _hexShieldBreak: {fileID: 345761926}
   _regenDelay: 5
 --- !u!4 &5544518820425707502
 Transform:
@@ -69250,7 +69269,7 @@ MonoBehaviour:
   hitPunchRadius: 0.8
   breakParticlesPrefab: {fileID: 130076067000113034, guid: 46c828eea8cf5f545a5c6249264966c1,
     type: 3}
-  breakScaleDuration: 0.3
+  _hexShieldBreak: {fileID: 345761926}
 --- !u!1 &8828155674954787791
 GameObject:
   m_ObjectHideFlags: 0
