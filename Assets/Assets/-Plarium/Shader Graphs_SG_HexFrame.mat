@@ -45,7 +45,7 @@ Material:
     - _Float: -0.19
     - _Float_1: 0.18
     - _Fresnel_Power: 4
-    - _Opacity: 1
+    - _Opacity: 4
     - _QueueControl: 0
     - _QueueOffset: -1
     m_Colors:
