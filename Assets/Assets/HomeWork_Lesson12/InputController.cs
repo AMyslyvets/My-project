@@ -18,6 +18,8 @@ namespace Fiz
         public static event Action OnJump;
         public static event Action OnBank;
 
+        public static event Action OnProjectileInput;
+
         [SerializeField] private InputActionAsset _inputActionAsset;
         [SerializeField] private string _mapName;
         [SerializeField] private string _UImapName;
@@ -32,6 +34,8 @@ namespace Fiz
         [SerializeField] private string _escapeName;
         [SerializeField] private string _jumpName;
         [SerializeField] private string _bankName;
+        [SerializeField] private string _projectileFireName;
+
         [SerializeField] private CursorLockMode _enabledCursorMode;
         [SerializeField] private CursorLockMode _disabledCursorMode;
 
@@ -46,6 +50,7 @@ namespace Fiz
         private InputAction _escapeAction;
         private InputAction _jumpAction;
         private InputAction _bankAction;
+        private InputAction _projectileFireAction;
 
         private bool _inputUpdated;
 
@@ -73,6 +78,7 @@ namespace Fiz
             _jumpAction = _actionMap[_jumpName];
             _escapeAction = _gameplayUIActionMap[_escapeName];
             _bankAction = _actionMap[_bankName];
+            _projectileFireAction = _actionMap[_projectileFireName];
 
             _moveAction.performed += MovePerformedHandler;
             _moveAction.canceled += MoveCanceledHandler;
@@ -96,21 +102,12 @@ namespace Fiz
 
             _escapeAction.performed += EscapePerformedHandler;
             _bankAction.performed += BankPerformedHandler;
+
+            if (_projectileFireAction != null)
+                _projectileFireAction.performed += ProjectileFirePerformedHandler;
         }
 
         private void OnDisable()
-        {
-            Cursor.visible = true;
-            Cursor.lockState = _disabledCursorMode;
-
-            if (_actionMap != null)
-                _actionMap.Disable();
-
-            if (_gameplayUIActionMap != null)
-                _gameplayUIActionMap.Disable();
-        }
-
-        private void OnDestroy()
         {
             if (_moveAction != null)
             {
@@ -154,6 +151,21 @@ namespace Fiz
             if (_bankAction != null)
                 _bankAction.performed -= BankPerformedHandler;
 
+            if (_projectileFireAction != null)
+                _projectileFireAction.performed -= ProjectileFirePerformedHandler;
+
+            Cursor.visible = true;
+            Cursor.lockState = _disabledCursorMode;
+
+            if (_actionMap != null)
+                _actionMap.Disable();
+
+            if (_gameplayUIActionMap != null)
+                _gameplayUIActionMap.Disable();
+        }
+
+        private void OnDestroy()
+        {
             OnMoveInput = null;
             OnLookInput = null;
             OnPrimaryInput = null;
@@ -164,6 +176,7 @@ namespace Fiz
             OnEscape = null;
             OnJump = null;
             OnBank = null;
+            OnProjectileInput = null;
         }
 
         private void MovePerformedHandler(InputAction.CallbackContext context)
@@ -246,6 +259,12 @@ namespace Fiz
         private void BankPerformedHandler(InputAction.CallbackContext context)
         {
             OnBank?.Invoke();
+        }
+
+        private void ProjectileFirePerformedHandler(InputAction.CallbackContext context)
+        {
+            if (UIState.IsWindowOpened) return;
+            OnProjectileInput?.Invoke();
         }
     }
 }

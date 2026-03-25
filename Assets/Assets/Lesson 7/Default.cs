@@ -134,6 +134,15 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Projectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""21ad2215-4da9-48c2-96a1-636f4cc7ab72"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -400,6 +409,17 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Bank"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6510f216-a75c-4e37-a204-2acdf3a53d45"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Projectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -496,6 +516,7 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
         m_DefaultMap_Heal = m_DefaultMap.FindAction("Heal", throwIfNotFound: true);
         m_DefaultMap_Inventory = m_DefaultMap.FindAction("Inventory", throwIfNotFound: true);
         m_DefaultMap_Bank = m_DefaultMap.FindAction("Bank", throwIfNotFound: true);
+        m_DefaultMap_Projectile = m_DefaultMap.FindAction("Projectile", throwIfNotFound: true);
         // GameplayUI
         m_GameplayUI = asset.FindActionMap("GameplayUI", throwIfNotFound: true);
         m_GameplayUI_Escape = m_GameplayUI.FindAction("Escape", throwIfNotFound: true);
@@ -579,6 +600,7 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_DefaultMap_Heal;
     private readonly InputAction m_DefaultMap_Inventory;
     private readonly InputAction m_DefaultMap_Bank;
+    private readonly InputAction m_DefaultMap_Projectile;
     public struct DefaultMapActions
     {
         private @DefaultInputActions m_Wrapper;
@@ -595,6 +617,7 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
         public InputAction @Heal => m_Wrapper.m_DefaultMap_Heal;
         public InputAction @Inventory => m_Wrapper.m_DefaultMap_Inventory;
         public InputAction @Bank => m_Wrapper.m_DefaultMap_Bank;
+        public InputAction @Projectile => m_Wrapper.m_DefaultMap_Projectile;
         public InputActionMap Get() { return m_Wrapper.m_DefaultMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -640,6 +663,9 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
             @Bank.started += instance.OnBank;
             @Bank.performed += instance.OnBank;
             @Bank.canceled += instance.OnBank;
+            @Projectile.started += instance.OnProjectile;
+            @Projectile.performed += instance.OnProjectile;
+            @Projectile.canceled += instance.OnProjectile;
         }
 
         private void UnregisterCallbacks(IDefaultMapActions instance)
@@ -680,6 +706,9 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
             @Bank.started -= instance.OnBank;
             @Bank.performed -= instance.OnBank;
             @Bank.canceled -= instance.OnBank;
+            @Projectile.started -= instance.OnProjectile;
+            @Projectile.performed -= instance.OnProjectile;
+            @Projectile.canceled -= instance.OnProjectile;
         }
 
         public void RemoveCallbacks(IDefaultMapActions instance)
@@ -774,6 +803,7 @@ public partial class @DefaultInputActions: IInputActionCollection2, IDisposable
         void OnHeal(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnBank(InputAction.CallbackContext context);
+        void OnProjectile(InputAction.CallbackContext context);
     }
     public interface IGameplayUIActions
     {
