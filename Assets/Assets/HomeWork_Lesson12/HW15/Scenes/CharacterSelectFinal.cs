@@ -9,6 +9,10 @@ public class CharacterSelectFinal : MonoBehaviour
     [SerializeField] private GameObject shooterRoot;
     [SerializeField] private GameObject mageRoot;
 
+    [Header("Cameras")]
+    [SerializeField] private GameObject shooterCamera;
+    [SerializeField] private GameObject mageCamera;
+
     [Header("Mage combat (optional)")]
     [SerializeField] private Behaviour mageCombat; // WaterCombatController
 
@@ -28,6 +32,9 @@ public class CharacterSelectFinal : MonoBehaviour
         SetCharacterEnabled(shooterRoot, true);
         SetCharacterEnabled(mageRoot, false);
 
+        SetCameraState(shooterCamera, true);
+        SetCameraState(mageCamera, false);
+
         if (mageCombat) mageCombat.enabled = false;
     }
 
@@ -36,29 +43,31 @@ public class CharacterSelectFinal : MonoBehaviour
         SetCharacterEnabled(shooterRoot, false);
         SetCharacterEnabled(mageRoot, true);
 
+        SetCameraState(shooterCamera, false);
+        SetCameraState(mageCamera, true);
+
         if (mageCombat) mageCombat.enabled = true;
+    }
+
+    private void SetCameraState(GameObject cameraObject, bool value)
+    {
+        if (!cameraObject) return;
+        cameraObject.SetActive(value);
     }
 
     private void SetCharacterEnabled(GameObject root, bool value)
     {
         if (!root) return;
 
-        // 1) Движение: CharacterController
         var cc = root.GetComponentInChildren<CharacterController>(true);
         if (cc) cc.enabled = value;
 
-        // 2) На всякий случай: выключаем ВСЕ MonoBehaviour кроме Renderer/Animator не трогаем
-        // (движение может быть в другом скрипте)
         var scripts = root.GetComponentsInChildren<MonoBehaviour>(true);
         foreach (var s in scripts)
         {
             if (!s) continue;
-
-            // не трогаем этот селектор, если вдруг он внутри
             if (s == this) continue;
 
-            // ВАЖНО: не отключаем UI/камера и т.п. (обычно не внутри root персонажа)
-            // Отключаем только скрипты, которые могут слушать input
             if (s.GetType().Name.Contains("Controller") ||
                 s.GetType().Name.Contains("Input") ||
                 s.GetType().Name.Contains("Move") ||
