@@ -88,9 +88,13 @@ namespace Fiz
                 hasHitSomething = true;
             }
 
-            if (other.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            if (other.GetComponentInParent<TrainingEffect>() is TrainingEffect trainingEffect)
             {
-                Debug.Log("Projectile found IHitEffectReceiver on: " + other.name);
+                trainingEffect.PlayMagicHitEffect(hitPoint);
+                hasHitSomething = true;
+            }
+            else if (other.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            {
                 receiver.PlayHitEffect(hitPoint);
                 hasHitSomething = true;
             }

@@ -3311,7 +3311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
     type: 3}
+  _magicHitEffectPrefab: {fileID: 0}
   _effectHeightOffset: 2
+  _effectLifeTime: 2
 --- !u!1001 &229931856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9036,12 +9038,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287802481}
   m_CullTransparentMesh: 1
---- !u!1 &306702571 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6071399590891712887, guid: dc70ac98d1238fb46bf5b0eca560e355,
-    type: 3}
-  m_PrefabInstance: {fileID: 1206271758}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &322504162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7514336129911514703, guid: 30ac70a3d687c114a940e775851aeb6e,
@@ -9989,27 +9985,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1206271758}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306702571}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbd71d443dcab9e4d91f6b16c44ee858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &463107108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306702571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c40b1ed8026cad2478e072c440fbcc02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
-    type: 3}
-  _effectHeightOffset: 2
 --- !u!1 &503517040
 GameObject:
   m_ObjectHideFlags: 0
@@ -15834,11 +15815,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6071399590891712887, guid: dc70ac98d1238fb46bf5b0eca560e355,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 463107108}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc70ac98d1238fb46bf5b0eca560e355, type: 3}
 --- !u!1 &1207738628
 GameObject:
@@ -21223,7 +21200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
     type: 3}
+  _magicHitEffectPrefab: {fileID: 0}
   _effectHeightOffset: 2
+  _effectLifeTime: 2
 --- !u!1 &1791068972
 GameObject:
   m_ObjectHideFlags: 0
@@ -30087,6 +30066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757756608512865383}
+  - component: {fileID: 8846005971236959202}
   - component: {fileID: 8846005971236959201}
   - component: {fileID: 1477703945707177641}
   - component: {fileID: 2283432744798496657}
@@ -56835,6 +56815,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4618074163818139487}
   m_LocalEulerAnglesHint: {x: 0, y: -202.37, z: 0}
+--- !u!1001 &3847372768311545719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6712267619477102781, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_Name
+      value: Ice Hit3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145379393210168445, guid: 8610cf6fedd58424599389a68da37ca3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8610cf6fedd58424599389a68da37ca3, type: 3}
 --- !u!1 &3879079126267029942
 GameObject:
   m_ObjectHideFlags: 0
@@ -70960,7 +71008,7 @@ PrefabInstance:
     - target: {fileID: 1582460840162489444, guid: f1373cc8a4db7964ea150ad5f0092757,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 1582460840162489444, guid: f1373cc8a4db7964ea150ad5f0092757,
         type: 3}
@@ -74612,6 +74660,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8846005971236959202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807834638506751264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40b1ed8026cad2478e072c440fbcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
+    type: 3}
+  _magicHitEffectPrefab: {fileID: 6712267619477102781, guid: 8610cf6fedd58424599389a68da37ca3,
+    type: 3}
+  _effectHeightOffset: 1
+  _effectLifeTime: 2
 --- !u!4 &8851767962542663848
 Transform:
   m_ObjectHideFlags: 0
@@ -76001,3 +76067,4 @@ SceneRoots:
   - {fileID: 3455535187911516536}
   - {fileID: 268299178}
   - {fileID: 8065363641239868827}
+  - {fileID: 3847372768311545719}

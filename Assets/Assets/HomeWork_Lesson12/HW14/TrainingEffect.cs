@@ -2,19 +2,37 @@ using UnityEngine;
 
 public class TrainingEffect : MonoBehaviour, IHitEffectReceiver
 {
-    [SerializeField] private GameObject _hitEffectPrefab; // Префаб визуального эффекта
+    [Header("Laser Hit")]
+    [SerializeField] private GameObject _hitEffectPrefab;
+
+    [Header("Magic Hit")]
+    [SerializeField] private GameObject _magicHitEffectPrefab;
+
     [SerializeField] private float _effectHeightOffset = 1f;
+    [SerializeField] private float _effectLifeTime = 2f;
 
     public void PlayHitEffect(Vector3 fromPosition)
     {
-        if (_hitEffectPrefab == null)
+        PlayEffect(_hitEffectPrefab, fromPosition);
+    }
+
+    public void PlayMagicHitEffect(Vector3 fromPosition)
+    {
+        PlayEffect(_magicHitEffectPrefab, fromPosition);
+    }
+
+    private void PlayEffect(GameObject effectPrefab, Vector3 fromPosition)
+    {
+        if (effectPrefab == null)
             return;
 
-        // Определяем точку появления эффекта (в центре объекта с небольшим смещением вверх)
         Vector3 hitPoint = transform.position + Vector3.up * _effectHeightOffset;
 
-        // Создаем эффект
-        GameObject effect = Instantiate(_hitEffectPrefab, hitPoint, Quaternion.LookRotation(hitPoint - fromPosition));
-        Destroy(effect, 2f); // удаляем эффект через 2 секунды
+        GameObject effect = Instantiate(
+            effectPrefab,
+            hitPoint,
+            Quaternion.LookRotation(hitPoint - fromPosition));
+
+        Destroy(effect, _effectLifeTime);
     }
 }

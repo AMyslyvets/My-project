@@ -377,7 +377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
     type: 3}
+  _magicHitEffectPrefab: {fileID: 6712267619477102781, guid: 8610cf6fedd58424599389a68da37ca3,
+    type: 3}
   _effectHeightOffset: 2
+  _effectLifeTime: 2
 --- !u!114 &5395731271876974480
 MonoBehaviour:
   m_ObjectHideFlags: 0
