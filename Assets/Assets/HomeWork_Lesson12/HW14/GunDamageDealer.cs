@@ -68,9 +68,15 @@ namespace Fiz
                 Debug.Log("Health NOT found");
             }
 
-            if (collider.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            // СНАЧАЛА пытаемся найти именно щит
+            ShieldHitReceiver shield = collider.GetComponentInParent<ShieldHitReceiver>();
+
+            if (shield != null)
             {
-                Debug.Log("IHitEffectReceiver found");
+                shield.PlayHitEffect(_gun.transform.position);
+            }
+            else if (collider.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            {
                 receiver.PlayHitEffect(_gun.transform.position);
             }
             else

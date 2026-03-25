@@ -13029,8 +13029,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996199482}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06975647, y: 0, z: 0, w: 0.9975641}
-  m_LocalPosition: {x: 0, y: 0.25, z: -2.5}
+  m_LocalRotation: {x: 0.04361939, y: 0, z: 0, w: 0.99904823}
+  m_LocalPosition: {x: -10.250251, y: 1.2253358, z: -3.3808947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16021,7 +16021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1132553354
 Transform:
   m_ObjectHideFlags: 0
@@ -43884,6 +43884,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shieldOrbit: {fileID: 8827822004946653042}
   _health: {fileID: 1477703945707177641}
+  _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
+    type: 3}
+  _effectHeightOffset: 1
+  _effectLifeTime: 2
 --- !u!33 &2294479687521166744
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -75402,8 +75406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40b1ed8026cad2478e072c440fbcc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 162584487599433031, guid: 278f273113cb86e458c8bbfc402d3661,
-    type: 3}
+  _hitEffectPrefab: {fileID: 0}
   _magicHitEffectPrefab: {fileID: 6712267619477102781, guid: 8610cf6fedd58424599389a68da37ca3,
     type: 3}
   _effectHeightOffset: 1

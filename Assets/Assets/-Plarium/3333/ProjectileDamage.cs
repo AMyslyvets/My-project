@@ -93,11 +93,11 @@ namespace Fiz
                 trainingEffect.PlayMagicHitEffect(hitPoint);
                 hasHitSomething = true;
             }
-            else if (other.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
+            /* else if (other.GetComponentInParent<IHitEffectReceiver>() is IHitEffectReceiver receiver)
             {
                 receiver.PlayHitEffect(hitPoint);
                 hasHitSomething = true;
-            }
+            } */
 
             if (!hasHitSomething)
             {
